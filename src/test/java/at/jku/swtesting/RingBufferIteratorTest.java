@@ -18,7 +18,7 @@ public class RingBufferIteratorTest {
     @Test
     public void iterator_test() {
         //GIVEN
-        var buffer = new RingBuffer<String>(4);
+        var buffer = new RingBuffer<String>((short)4);
         var iterator = buffer.iterator();
 
         //WHEN
@@ -38,7 +38,7 @@ public class RingBufferIteratorTest {
     @Test
     public void noMoreElements_iterator_test() {
         //GIVEN
-        var buffer = new RingBuffer<String>(4);
+        var buffer = new RingBuffer<String>((short)4);
         var iterator = buffer.iterator();
 
         //WHEN
@@ -52,7 +52,7 @@ public class RingBufferIteratorTest {
     @Test
     public void hasNext_iterator_test() {
         //GIVEN
-        var buffer = new RingBuffer<String>(4);
+        var buffer = new RingBuffer<String>((short)4);
         var iterator = buffer.iterator();
 
         //WHEN
@@ -65,7 +65,7 @@ public class RingBufferIteratorTest {
     @Test
     public void hasNext_noNext_iterator_test() {
         //GIVEN
-        var buffer = new RingBuffer<String>(4);
+        var buffer = new RingBuffer<String>((short)4);
         var iterator = buffer.iterator();
 
         //THEN
@@ -76,7 +76,7 @@ public class RingBufferIteratorTest {
     @Test
     public void capacity_exceeded_iterator_test() {
         //GIVEN
-        var buffer = new RingBuffer<String>(2);
+        var buffer = new RingBuffer<String>((short)2);
         var iterator = buffer.iterator();
 
         //WHEN
@@ -96,7 +96,7 @@ public class RingBufferIteratorTest {
     @Test
     //not sure if this need testing but i added it for coverage's sake
     public void remove_iterator_test() {
-        var buffer = new RingBuffer<String>(2);
+        var buffer = new RingBuffer<String>((short)2);
         var iterator = buffer.iterator();
 
         assertThrows(UnsupportedOperationException.class, iterator::remove);

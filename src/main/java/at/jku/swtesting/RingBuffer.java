@@ -17,21 +17,15 @@ public class RingBuffer<Item> implements Iterable<Item> {
 	private int first = 0; 	// index of first element of queue
 	private int last = 0; // index of next available slot
 
-	private static final int MAX_CAPACITY = 500;
-
 	/**
 	 * Creates a new empty ring buffer. 
 	 * @param capacity number of elements the buffer is able to hold.
 	 * @throws IllegalArgumentException if the initial capacity is less than one.
 	 */
 	@SuppressWarnings("unchecked")
-	public RingBuffer(int capacity) {
+	public RingBuffer(short capacity) {
 		if (capacity < 1) {
 			throw new IllegalArgumentException("Initial capacity is less than one");
-		}
-
-		if (capacity > MAX_CAPACITY) {
-			throw new IllegalArgumentException("MAx capacity [" + MAX_CAPACITY + "] exeeded");
 		}
 
 		// cast needed since no generic array creation in Java
